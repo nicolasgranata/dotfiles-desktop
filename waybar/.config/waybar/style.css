@@ -1,0 +1,111 @@
+/* --- Solarized Dark Palette Definition --- */
+@define-color base03 #002b36;
+/* Main Background (Darkest) */
+@define-color base02 #073642;
+/* Module Background (Dark) */
+@define-color base01 #586e75;
+/* Secondary Content (Inactive) */
+@define-color base00 #657b83;
+/* Normal Content */
+@define-color base0 #839496;
+/* Main Text */
+@define-color base1 #93a1a1;
+/* Highlighted Text/Borders */
+
+@define-color blue #268bd2;
+/* Primary Accent (Active) */
+@define-color cyan #2aa198;
+/* Secondary Accent (Hover) */
+@define-color green #859900;
+/* Success/OK */
+@define-color yellow #b58900;
+/* Warning */
+@define-color orange #cb4b16;
+/* Error (Mute/Disconnected) */
+@define-color red #dc322f;
+/* Critical */
+
+* {
+    font-family: "FiraMono Nerd Font", "sans-serif";
+    font-weight: 500;
+    font-size: 14px;
+    min-height: 0;
+    color: @base0;
+}
+
+window#waybar {
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background-color: @base03;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: @base02;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: @base01;
+    padding: 4px 4px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @blue;
+    text-shadow: 0 0 4px @blue;
+}
+
+#workspaces button.focused {
+    background-color: @base03;
+    box-shadow: inset 0 -3px @blue;
+    color: @base1;
+}
+
+#clock,
+#network,
+#pulseaudio,
+#custom-weather,
+#custom-power,
+#module {
+    margin: 2px 2px;
+    padding: 0px 4px;
+    border-radius: 50px;
+    color: @base1;
+}
+
+#clock:hover,
+#custom-weather:hover,
+#network:hover,
+#pulseaudio:hover {
+    font-weight: bold;
+    box-shadow: 0px 0px 3px @cyan;
+    transition: opacity 0.3s ease;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#pulseaudio.muted {
+    color: @orange;
+}
+
+menu {
+    background-color: alpha(@base02, 0.95);
+    color: @base0;
+    border: 1px solid @base1;
+}
+
+menu>*:hover {
+    margin: 0px 2px;
+    background-color: @base03;
+    border-radius: 10px;
+    color: @blue;
+}

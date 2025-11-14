@@ -1,0 +1,87 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 4,
+    "modules-left": [
+        "custom/power"
+    ],
+    "modules-center": [
+
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "clock",
+        "custom/weather"
+    ],
+    "clock": {
+        "timezone": "America/Argentina/Buenos_Aires",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:L%a %d,%b %Y}",
+        "format": " {:%H:%M}",
+        "locale": "es_AR.utf8"
+    },
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{essid} ({signalStrength}%) ",
+        "format-disconnected": "󱛅 ",
+        "on-click": "kitty -e nmtui"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9"
+        },
+        "disable-scroll": true
+    },
+    "custom/power": {
+        "format": " ⏻  ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown now",
+            "reboot": "reboot",
+            "logout": "hyprctl dispatch exit",
+            "lock": "hyprlock"
+        }
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "$HOME/.config/scripts/weather-script.sh",
+        "return-type": "json"
+    }
+}
