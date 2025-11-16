@@ -2,3 +2,6 @@
 
 echo "Instalando Stow"
 sudo pacman -S --needed --noconfirm stow
+
+cd $HOME/dotfiles/ 
+stow .

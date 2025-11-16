@@ -16,4 +16,4 @@ echo "Instalando Hyprpolkitagent"
 sudo pacman -S --needed --noconfirm hyprpolkitagent
 
 echo "Instalando hyprshot"
-sudo pacmnan -S --needed --noconfirm hyprshot
+sudo pacman -S --needed --noconfirm hyprshot
