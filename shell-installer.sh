@@ -35,5 +35,3 @@ bash bin/install-stow.sh
 
 cd dotfiles
 stow -v -t $HOME .
-
-echo "Reiniciando el sistema en 10 segundos..." && sleep 10 && reboot
