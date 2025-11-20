@@ -32,7 +32,3 @@ bash bin/install-firefox.sh
 
 chmod +x bin/install-stow.sh
 bash bin/install-stow.sh
-
-cd $HOME/arch-hyprland-config/dotfiles
-echo $HOME
-# stow -v -t $HOME bash
